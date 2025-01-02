@@ -15,9 +15,9 @@ from create_synthetic import *
 rewrite_print = print
 def print(*arg):
     file_path = './log.txt'
-    # 打印到控制台
+    # Print to the console
     rewrite_print(*arg)
-    # 保存到文件
+    # Save to a file
     rewrite_print(*arg, file=open(file_path, "a", encoding="utf-8"))
 
 
