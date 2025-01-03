@@ -128,7 +128,9 @@ def gen_dataset(name):
         graph = dataset[0]
         graph = dgl.to_homogeneous(graph, ndata=['feature', 'label', 'train_mask', 'val_mask', 'test_mask'])
     elif name == 'tfinance':
+        print("here bitvh 1")
         dataset, label_dict = load_graphs('../data/tfinance/tfinance1')
+        print("here btich 1.1")
         graph = dataset[0]
         graph.ndata['label'] = dataset[0].ndata['label'].argmax(1)
         graph.ndata['feature'] = graph.ndata['feature'].float()
@@ -152,6 +154,7 @@ def gen_dataset(name):
         my_list = list(range(11944))
         num = 20
     elif name == 'tfinance':
+        print("here bitvh 2")
         my_list = list(range(39357))
         num = 5
     elif name == 'tsocial':
@@ -196,4 +199,4 @@ def gen_dataset(name):
         dgl.save_graphs(data_dir + "my_{}_{}_graph.bin".format(name,i),  sub_graph_new)
 
 if __name__ == '__main__':
-    gen_dataset(name='tfinance' )
+    gen_dataset(name='yelp' )
