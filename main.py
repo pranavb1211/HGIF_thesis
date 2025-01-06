@@ -102,6 +102,9 @@ fix_seed(0)
 parser = argparse.ArgumentParser(description='General Training Pipeline')
 parser_add_main_args(parser)
 args = parser.parse_args()
+# Ensure save directory exists
+if not os.path.exists(args.save_dir):
+    os.makedirs(args.save_dir)
 print(args)
 
 device = torch.device("cuda:" + str(args.device)) if torch.cuda.is_available() else torch.device("cpu")
