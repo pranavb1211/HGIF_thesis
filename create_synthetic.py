@@ -199,4 +199,4 @@ def gen_dataset(name):
         dgl.save_graphs(data_dir + "my_{}_{}_graph.bin".format(name,i),  sub_graph_new)
 
 if __name__ == '__main__':
-    gen_dataset(name='yelp' )
+    gen_dataset(name='tfinance' )
